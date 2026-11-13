@@ -35,16 +35,32 @@ footer{text-align:center;padding:20px;color:#888;font-size:13px}
 <p>✅ Visa Touriste Canada<br>✅ Visa Étudiant Canada<br>✅ Visa Travail Canada<br>✅ Aide dossier + Rendez-vous</p>
 </div>
 <div class="card">
-<h3>📝 Faire Ma Demande</h3>
-<form id="visaForm">
-<input type="text" id="nom" placeholder="Ton Nom Complet" required>
-<input type="tel" id="phone" placeholder="Ton WhatsApp / Téléphone" required>
-<select id="type"><option>Visa Touriste</option><option>Visa Étudiant</option><option>Visa Travail</option><option>Autre</option></select>
-<textarea id="msg" placeholder="Dis-nous ton projet..."></textarea>
-<button type="submit">ENVOYER MA DEMANDE</button>
-<p id="ok" style="color:green;display:none">✅ Demande envoyée ! On te contacte sur WhatsApp.</p>
-</form>
+<div class="form">
+  <form onsubmit="envoyerWhatsApp(); return false;">
+    <input type="text" id="name" placeholder="Ton Nom Complet" required>
+    <input type="tel" id="phone" placeholder="Ton WhatsApp / Téléphone" required>
+    <select id="type" required>
+      <option value="">Type de Visa</option>
+      <option>Visa Touriste</option>
+      <option>Visa Etudiant</option>
+      <option>Visa Travail</option>
+    </select>
+    <textarea id="msg" placeholder="Dis-nous ton projet..."></textarea>
+    <button type="submit">ENVOYER SUR WHATSAPP</button>
+  </form>
 </div>
+
+<script>
+function envoyerWhatsApp() {
+  var nom = document.getElementById('name').value;
+  var tel = document.getElementById('phone').value;
+  var type = document.getElementById('type').value;
+  var msg = document.getElementById('msg').value;
+  var numeroAgence = "22960000000";
+  var texte = "Bonjour VisacanadAgency %0A%0ANouvelle demande:%0ANom: " + nom + "%0ATel: " + tel + "%0AType: " + type + "%0AMessage: " + msg;
+  window.open("https://wa.me/" + numeroAgence + "?text=" + texte, "_blank");
+}
+</script>
 <div class="card">
 <h3>Pourquoi Nous ?</h3>
 <p>🌍🛫 Afrique 🇨🇦🛬 Canada 🇨🇦 , on comprend tes réalités<br>⚡ Réponse en moins de 24h<br>🔒 Tes infos restent privées</p>
