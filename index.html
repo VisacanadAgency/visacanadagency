@@ -55,10 +55,11 @@ footer{text-align:center;padding:20px;color:#888;font-size:13px}
 function envoyerWhatsApp() {
   var nom = document.getElementById('name').value;
   var tel = document.getElementById('phone').value;
+  var pays = document.getElementById('pays').value;
   var type = document.getElementById('type').value;
   var msg = document.getElementById('msg').value;
   var numeroAgence = "2290148914171";
-  var texte = "Bonjour VisacanadAgency %0A%0ANouvelle demande:%0ANom: " + nom + "%0ATel: " + tel + "%0AType: " + type + "%0AMessage: " + msg;
+  var texte = "Bonjour VisacanadAgency %0A%0ANouvelle demande:%0A" + "Nom: " + nom + "%0A" + "Pays: " + pays + "%0A" + "Tél: " + tel + "%0A" + "Type: " + type + "%0A" + "Projet: " + msg;
   window.open("https://wa.me/" + numeroAgence + "?text=" + texte, "_blank");
 }
 </script>
