@@ -38,7 +38,7 @@ footer{text-align:center;padding:20px;color:#888;font-size:13px}
 <div class="form">
   <form onsubmit="envoyerWhatsApp(); return false;">
     <input type="text" id="name" placeholder="Ton Nom Complet" required>
-    <input type="tel" id="phone" placeholder="Ton WhatsApp / Téléphone" required>
+    <input type="email" id="email" placeholder="Ton Email, ex: jean@gmail.com" required>
     <input type="text" id="pays" placeholder="Ton Pays, ex: Sénégal" required>
     <select id="type" required>
       <option value="">Type de Visa</option>
@@ -54,12 +54,12 @@ footer{text-align:center;padding:20px;color:#888;font-size:13px}
 <script>
 function envoyerWhatsApp() {
   var nom = document.getElementById('name').value;
-  var tel = document.getElementById('phone').value;
+  var email = document.getElementById('email').value;
   var pays = document.getElementById('pays').value;
   var type = document.getElementById('type').value;
   var msg = document.getElementById('msg').value;
   var numeroAgence = "2290148914171";
-  var texte = "Bonjour VisacanadAgency %0A%0ANouvelle demande:%0A" + "Nom: " + nom + "%0A" + "Pays: " + pays + "%0A" + "Tél: " + tel + "%0A" + "Type: " + type + "%0A" + "Projet: " + msg;
+  var texte = "Bonjour VisacanadAgency %0A%0ANouvelle demande:%0A" + "Nom: " + nom + "%0A" + "Pays: " + pays + "%0A" + "Email: " + email + "%0A" + "Type: " + type + "%0A" + "Projet: " + msg;
   window.open("https://wa.me/" + numeroAgence + "?text=" + texte, "_blank");
 }
 </script>
